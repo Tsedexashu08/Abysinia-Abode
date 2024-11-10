@@ -31,7 +31,6 @@ function App() {
                     <Route index element={<LoginPage />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/signup' element={<Signup />} />
-                    <Route path='/termsPage' element={<Terms />} />
                     {/* each route below will only work if authentication is done first(thats why we use ternanry conditional below). */}
                     {/* we show notfound page mak made if not authenticted when opening a page. */}
                     <Route element={<MainPage />}>
@@ -44,6 +43,7 @@ function App() {
                         <Route path='/ReservationDetails/:name' element={isAuthenticated ? <ReservationDetails /> : <Navigate to="/404-notFound" />} />
                         <Route path='/editaccount' element={isAuthenticated ? <EditAccount /> : <Navigate to="/404-notFound" />} />
                         <Route path='/privacyPage' element={isAuthenticated ? <Privacy /> : <Navigate to="/404-notFound" />} />
+                        <Route path='/termsPage' element={<Terms />} />
                         <Route path='/myproperties' element={isAuthenticated ? <MyProperties /> : <Navigate to="/404-notFound" />} />
                         <Route path='/editproperty/:id' element={isAuthenticated ? <EditProperty /> : <Navigate to="/404-notFound" />} />
                         <Route path='/rooms' element={isAuthenticated ? <Rooms /> : <Navigate to="/404-notFound" />} />
