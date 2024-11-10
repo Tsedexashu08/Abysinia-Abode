@@ -18,10 +18,10 @@ import avatar from '../images/avatar.png'
 
 function Account_Page() {
   const { onChange } = useOutletContext()
-  const { logout } = useAuth()
+  const { logout } = useAuth()//logout function defined in authProvider component.
   const navigate = useNavigate()
   const [account, setAccountInfo] = useState([])
-  const [purchases, setPurchases] = useState([])//state for stroring and displaying purchases in account page.
+  const [purchases, setPurchases] = useState([])//state for storing and displaying purchases in account page.
   const user_id = (sessionStorage.getItem('user_id'));//id of currently logged in user that we got from login page and header component.
 
 
@@ -82,6 +82,7 @@ function Account_Page() {
         <Link className={style.links} to="/myproperties"><img src={propertyIcon} alt="edit" />My Properties</Link>
         <Link className={style.links} to='/addevent'><img src={eventIcon} />Add event</Link>
         <Link className={style.links} to='/' onClick={logout}><img src={logoutIcon} />Log Out</Link>
+        {/* calling logout functio on logout to reset authentication state in sessionStorage(so user has to login again&cant use url for navigation) */}
       </div>
 
       <div className={style.account}>
