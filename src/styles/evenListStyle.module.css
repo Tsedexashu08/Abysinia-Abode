@@ -1,0 +1,95 @@
+.lists {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    margin-top: 5%;
+    height: 80%;
+    width: 100%;
+    gap: 3%;
+    overflow: hidden;
+    
+}
+
+.lists img {
+    height: 85%;
+    width: 100%;
+    top: 1%;
+    background-color: transparent;
+    border: 1px solid gray;
+    position: relative;
+}
+
+.addProperty{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    gap: 6%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: fit-content;
+    padding: 5px;
+    z-index: 1;
+  }
+  .addProperty button{
+    border-radius: 30px;
+    border: 2px solid white;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    height: 80px;
+    width:400px;
+    margin-bottom: 25%;
+  }
+  .addProperty button:hover{
+    border: 2px double white;
+  }
+  .addProperty img{
+    border: none;
+    height: 400px;
+  }
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .lists {
+        /* flex-direction: column; Stack items vertically on larger tablets */
+        height: auto; /* Adjust height for flexibility */
+        gap: 2%;
+    }
+
+    .lists img {
+        height: auto; /* Adjust height automatically */
+        width: 90%; /* Adjust width for images */
+        margin: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .lists {
+        /* flex-direction: column; Stack items vertically on smaller screens */
+        height: auto; /* Adjust height for flexibility */
+        gap: 2%;
+    }
+
+    .lists img {
+        height: auto; /* Adjust height automatically */
+        width: 80%; /* Adjust width for images */
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .lists {
+        /* flex-direction: column; Stack items vertically on mobile */
+        height: auto; /* Adjust height for flexibility */
+        gap: 1%;
+    }
+
+    .lists img {
+        height: auto; /* Adjust height automatically */
+        width: 100%; /* Full width on mobile */
+        margin: auto;
+    }
+}

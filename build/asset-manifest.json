@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be21e841.css",
+    "main.js": "/static/js/main.c68f16c6.js",
+    "static/media/addpropimage.png": "/static/media/addpropimage.a19d0295738056fb1e35.png",
+    "static/media/home.png": "/static/media/home.c47ccfe976f4ea485647.png",
+    "static/media/Homebg.jpg": "/static/media/Homebg.2609a098081707b9ff0f.jpg",
+    "static/media/accountIcon.png": "/static/media/accountIcon.8bfc95d18bce79f5cc36.png",
+    "static/media/bg.png": "/static/media/bg.8347b7d3cd4ba9acfde4.png",
+    "static/media/wave.png": "/static/media/wave.2768d3ffd097ad419d39.png",
+    "static/media/DRVPV-P0002-Castaways-Seafood.16x9.webp": "/static/media/DRVPV-P0002-Castaways-Seafood.16x9.a59b823743e4899fb453.webp",
+    "static/media/propertyiIcon.png": "/static/media/propertyiIcon.4ba08805e779a9ee330c.png",
+    "static/media/jpg": "/static/media/ec0d74b2399ea968afa4784109dfc859.43c150f18b7f70878a5f.jpg",
+    "static/media/roomIcon.png": "/static/media/roomIcon.5cdc8282400f8554ab7f.png",
+    "static/media/user.png": "/static/media/user.961568814dceb733c85a.png",
+    "index.html": "/index.html",
+    "main.be21e841.css.map": "/static/css/main.be21e841.css.map",
+    "main.c68f16c6.js.map": "/static/js/main.c68f16c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be21e841.css",
+    "static/js/main.c68f16c6.js"
+  ]
+}

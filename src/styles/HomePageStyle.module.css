@@ -1,0 +1,407 @@
+.HomePage {
+    width: 100vw;
+  
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+   
+    top: 0;
+    left: 0;
+
+    animation: slideUp 1s ease-out forwards; 
+    animation-delay: 0.05s;
+    transition: transform 0.5s ease; 
+
+
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.searchSection { 
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+
+    background-image: url("../images/Homebg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.searchbar {
+    margin-top: 18%;
+    margin-left: 25%;
+
+    width: 55%;
+    height: 7%;
+    background-color: #e3fdfd;
+
+    border-radius: 30px;
+    
+}
+
+.Main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    border: none;
+}
+
+.Main input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: #2596be;
+    font-size: 24px;
+    outline: none; 
+
+}
+
+
+
+.searchbar button {
+    height: 100%; 
+    width: 67px;
+    background-color: transparent;
+    border-top-right-radius: 30px; 
+    border-bottom-right-radius: 30px;
+    border: none;
+    position: absolute; 
+    right: 1px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.searchbar img {
+    width: 50px; 
+    height: auto;
+}
+.searchSection h1 {
+    color: #e3fdfd;
+    font-size: 44px;
+}
+
+.eventsection {
+    height: 90vh;
+    width: 100vw;
+    background-color: #cbf1f5;
+    border-top-left-radius: 300px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.offersection {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background-color: white;
+    text-align: center;
+    
+
+}
+
+.addPropertysection {
+    height: 450px;
+    width: 100vw;
+    text-align: center;
+    background-color: #e3fdfd;
+    display: flex;
+    flex-direction: row;
+
+    z-index: 1;
+
+}
+
+.eventsection h1,.offersection h1{
+    font-size: 45px;
+}
+
+.texts {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    gap: 0.5%;
+}
+
+.texts button {
+    width: 20%;
+    height: 15%;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 37%;
+    color: #e3fdfd;
+    border-radius: 25px;
+    background-color: #0ca4a5;
+}
+.texts h1{
+    font-size: 50px;
+}
+
+.image {
+    width: 80%;
+    height: 120%;
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+    padding: 5%;
+}
+
+.image img {
+    background-color: antiquewhite;
+    height: 80%;
+    width: 80%;
+    justify-items: center;
+}
+
+/*div containing the input feild*/
+.searches {
+    display: flex;
+    width: 100%;
+    /* margin-left: 5%; */
+
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
+.searches input {
+   
+    text-align: center;
+    height: 85%;
+    margin-top: 0.8%;
+}
+
+.Main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+}
+
+.Main button:hover {
+    background-color: rgba(255, 255, 255, 0.833);
+    
+}
+.Main button:active {
+    background-color: rgba(24, 190, 190, 0.56)
+    
+}
+
+.Main button {
+    margin-left: 2%;
+    height: 62px;
+}
+.link{
+    color: #e3fdfd;
+}
+.HomePage .addpropbutton{
+    border: 2px double gray;
+    box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.5);
+}
+.addpropbutton:hover{
+    scale: 1.01;
+    opacity: 0.9;
+}
+.errorPopup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8); 
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensuring it appears above other elements(ik its ridiculos but dont come at me mak.) */
+    transition: all 0.5s  ease-in-out; /* Smooth transition for appearance */
+}
+
+@media (max-width:967px) {
+    .searchbar {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .searchbar img {
+        width: 40px;
+    }
+
+    .eventsection {
+        border-top-left-radius: 0;
+    }
+
+    .eventsection h1 {
+        font-size: 30px;
+    }
+
+    .offersection h1 {
+        font-size: 30px;
+    }
+
+    .texts h1 {
+        text-align: left;
+        font-size: 40px;
+        padding-left: 50px;
+    }
+
+    .texts button {
+        width: 50%;
+    }
+}
+
+/* ive added code here */
+@media (max-width: 768px) { /* Tablet Breakpoint */
+    .searchbar {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20%;
+    }
+
+    .searchSection {
+        padding-top: 20%;
+    }
+
+    .searchSection h1 {
+        padding-top: 20%;
+        font-size: 30px;
+    }
+
+    .eventsection {
+        border-top-left-radius: 0;
+        height: 50%;
+    }
+
+    .eventsection h1 {
+        font-size: 30px;
+        height: auto;
+    }
+
+    .offersection h1 {
+        font-size: 30px;
+        height: 50%;
+    }
+
+    .texts h1 {
+        text-align: left;
+        font-size: 40px;
+        padding-left: 50px;
+    }
+
+    .texts button {
+        width: 50%;
+    }
+
+    .image {
+        display: none;
+    }
+}/* up to here */
+
+@media (max-width: 500px) {
+    .HomePage{
+        gap: 0.2em;
+        font-size: 50%;
+    }
+    .searchbar {
+        width: 90%;
+        margin-top: 20%;
+        font-size: 30px;
+    }
+   .Main input{
+    font-size: 25px;
+    text-align: center;  
+    padding: 5px;
+}
+.Main{
+    display: flex;
+    align-items: center;
+}
+
+    .searchSection {
+        padding-top: 20%;
+    }
+
+    .searchSection h1 {
+        padding-top: 20%;
+        font-size: 30px;
+    }
+    .searchSection {
+        padding-top: 20%;
+    }
+
+    .searchSection h1 {
+        padding-top: 20%;
+        font-size: 30px;
+    }
+
+    .eventsection {
+        border-top-left-radius: 0;
+        height: auto;
+    }
+
+    .eventsection h1 {
+        font-size: 30px;
+    }
+     .offersection{
+        margin-top: -1em;
+        height: auto;
+     }
+    .offersection h1 {
+        font-size: 30px;
+    }
+
+    .texts h1 {
+        text-align: left;
+        font-size: 40px;
+        padding-left: 50px;
+    }
+
+    .texts button {
+        width: 50%;
+    }
+    /* up to here */
+
+    .image {
+        display: none;
+    }
+    .Main button{
+        margin: auto;
+    }
+}

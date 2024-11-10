@@ -1,0 +1,70 @@
+.pay{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0ca4a5;
+  border-radius: 20px;
+  border: 3px double white;
+  margin: 15px;
+}
+.pay:hover{
+  box-shadow: 15px 4px 10px rgba(0, 0, 0, 0.5);
+  scale: 1.01;
+  transition: 0.4s ease-in-out;
+}
+.payment{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+.payment input{
+  width: 100%;
+}
+.pay  .app {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pay  h1, .pay  h2 {
+    text-align: center;
+  }
+  
+  .pay  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+ .pay  input,  .pay textarea, .pay button {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .pay   button[type='submit']{
+    background-color: #19f7f7ef;
+    color: white;
+    border: 3px double white;
+  }
+  button:hover{
+    opacity: 0.8;
+  }
+  /* Responsive for smaller screens */
+   @media (max-width: 768px) {
+   .pay .app {
+    max-width: 90%; /* Adjust width for smaller screens */
+   }
+   }
+
+   /*  Responsive for tablets (landscape and portrait) */
+   @media (min-width: 768px) and (max-width: 1024px) {
+   /* Styles for tablets */
+   }
+
+   /*  Responsive for desktops */
+   @media (min-width: 1024px) {
+   /* Styles for desktops */
+  }

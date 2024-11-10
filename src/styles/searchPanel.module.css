@@ -1,0 +1,123 @@
+/* search bar stylings */
+.searchDiv {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto; /* Flexible height */
+  border-bottom: 4px solid #caebec;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 2%;
+  padding: 10px 0; /* Added padding for better spacing */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* style for search box (its a div so we can include the search icon) */
+.searchDiv .search {
+  display: flex;
+  align-items: center;
+  background-color: #e3fdfd;
+  border-radius: 35px;
+  border: 2px double #0ca4a5;
+  padding: 10px 15px;
+  width: 80%;
+  max-width: 700px;
+  height: fit-content;
+}
+
+/* this is styling for the search text box */
+.searchDiv input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 18px; /* Adjusted font size */
+  padding: 5px;
+  border-radius: 35px;
+}
+
+.searchDiv .search img {
+  width: 28px; /* Adjusted size for better responsiveness */
+  height: 28px;
+  margin-right: 10px;
+}
+
+.searchDiv select {
+  width: fit-content;
+  background-color: #e3fdfd;
+  border-radius: 20px;
+  border: 2px double #0ca4a5;
+  height: 55%;
+  font-size: 19px; /* Adjusted font size */
+  padding: 5px;
+}
+
+.searchDiv label {
+  font-size: 18px; /* Adjusted font size */
+  color: #0ca4a5;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .searchDiv .search {
+    width: 90%; /* Increase width on larger tablets */
+  }
+
+  .searchDiv input {
+    font-size: 16px; /* Adjusted font size */
+  }
+
+  .searchDiv select {
+    font-size: 14px; /* Adjust font size for select dropdown */
+  }
+}
+
+@media (max-width: 768px) {
+  .searchDiv {
+    padding: 10px 0; /* Adjust padding for smaller screens */
+  }
+
+  .searchDiv .search {
+    width: 95%; /* Further increase width on smaller tablets */
+  }
+
+  .searchDiv input {
+    font-size: 14px; /* Adjusted font size */
+  }
+
+  .searchDiv select {
+    font-size: 12px; /* Adjust font size for select dropdown */
+  }
+
+  .searchDiv .search img {
+    width: 24px; /* Smaller icon size for mobile */
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchDiv {
+    padding: 5px 0; /* Adjust padding for mobile */
+  }
+
+  .searchDiv .search {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .searchDiv input {
+    font-size: 12px; /* Adjusted font size */
+  }
+
+  .searchDiv select {
+    font-size: 12px; /* Adjust font size for select dropdown */
+  }
+
+  .searchDiv .search img {
+    width: 20px; /* Smaller icon size for mobile */
+    height: 20px;
+  }
+}

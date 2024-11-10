@@ -1,0 +1,742 @@
+* {
+    box-sizing: border-box;
+}
+
+.account {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    margin-left: 0.5%;
+
+    padding: 15px;
+  
+    position: relative;
+
+    animation: fadeUpText 1s ease-out forwards;
+    transition: transform 0.5s ease;
+}
+
+.accountBanner input {
+    display: none;
+}
+
+/* From Uiverse.io by adamgiebl */
+.cssbuttonsiobutton {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg,
+            rgba(20, 167, 62, 1) 0%,
+            rgba(102, 247, 113, 1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+}
+
+.cssbuttonsiobutton svg {
+    background-color: lightgreen;
+    margin-right: 6px;
+}
+
+.cssbuttonsiobutton:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.cssbuttonsiobutton:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.accountBanner span img {
+    height: 26px;
+    width: 26px;
+}
+
+/* Fade-in background animation */
+@keyframes fadeInBackground {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Slide-in modal animation */
+@keyframes slideInModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.AccountPage {
+    display: flex;
+    height: max-content;
+    width: 100vw;
+
+    /* margin: auto; */
+    margin-top: 3%;
+}
+
+.accountInfo {
+    display: flex;
+    flex: 1;
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.accountInfo img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: fill;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.AccountPage .sideBar {
+    background-color: #e3fdfd;
+    /* Light background color */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    justify-content: flex-start;
+    
+    padding-top: 130px;
+    width: 30%;
+    height: auto;
+   
+    color: rgb(62, 62, 62);
+   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
+    transition: transform 0.3s ease;
+ 
+}
+
+.AccountPage .sideBar:hover {
+    transform: translateX(10px);
+    /* Subtle slide effect on hover */
+}
+
+.AccountPage .sideBar .general {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Adjusted spacing */
+    font-size: x-large;
+    animation: fadeIn 0.5s;
+    /* Fade-in animation */
+    margin-top: -25%;
+    margin-bottom: 5%;
+}
+
+.AccountPage .sideBar .general img {
+    width: 90px;
+    height: 90px;
+}
+
+.AccountPage .sideBar a {
+    text-align: left;
+    padding: 15px 20px;
+    /* Padding for better click area */
+    font-size: 18px;
+    /* Slightly smaller font size */
+    color: rgb(62, 62, 62);
+    /* Text color */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* Remove underline */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transition for hover effects */
+    display: flex;
+    /* Flex for icon and text alignment */
+    align-items: center;
+    /* Center icon vertically */
+    gap: 10px;
+    /* Space between icon and text */
+    margin-left: 4%;
+}
+
+.AccountPage .sideBar a:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+    color: #007bff;
+    /* Change text color on hover */
+}
+
+.AccountPage .sideBar a img {
+    height: 60px;
+    /* Adjusted icon size */
+    width: 60px;
+    /* Adjusted icon size */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        /* Slide from above */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sideBar img {
+    height: 50%;
+}
+
+.links img {
+    height: 45px;
+    width: auto;
+    padding: auto;
+}
+
+.links:hover {
+    background-color: #19c7d0;
+}
+
+.links:active {
+    background-color: aliceblue;
+}
+
+.AccountPage .sideBar a:hover {
+    background-color: #e3fdfd;
+}
+
+.sideBar a.edit {
+    margin-top: 50%;
+}
+
+.AccountPage .sideBar button {
+    margin-top: 32%;
+    text-align: left;
+    padding-left: 15%;
+    font-size: xx-large;
+    border: none;
+    background-color: transparent;
+}
+
+.accountBanner {
+    /*card with account pic,name and account type*/
+    width: 90vw;
+    height: 35vh;
+
+    display: flex;
+
+    justify-content: left;
+    gap: 2%;
+    text-align: left;
+    font-size: 15px;
+
+
+
+
+    margin: auto;
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+.propinformation {
+    margin-left: 15%;
+    text-align: end;
+}
+
+.Propic {
+    /*Account pic*/
+    width: 21%;
+    height: 100%;
+
+    margin-left: 4%;
+
+
+    border-radius: 50%;
+    background-color: white;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border: 5px double #19c7d0;
+}
+
+.Propic:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px #19c7d0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    rotate: transform(-0.5em);
+    
+}
+
+.accountBanner:hover {
+    border-radius: 35px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), #06b7cb);
+    transition: opacity 0.5s ease;
+    color: white;
+    box-shadow: 14px 8px 24px rgba(0, 0, 0.5, 0.5);
+    scale: 1.01;
+}
+
+.accountBanner .del {
+    position: relative;
+
+    width: 300px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+}
+
+.del .cssbuttonsiobutton {
+    background-color: lightgreen;
+}
+
+.del button,
+.del div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .5),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    letter-spacing: 1px;
+    color: #ff0000;
+    z-index: 1;
+    transition: 0.6s;
+}
+
+.del div {
+    background-color: lightgray;
+}
+
+.del div:hover {
+    letter-spacing: 4px;
+    color: #fff;
+    background: #ff0000;
+}
+
+@keyframes fadeUpText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info {
+    /*Account name and type labels.*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+.AccountPage h1,
+.AccountPage h2,
+.AccountPage h3 {
+    text-align: center;
+}
+
+.data {
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* Ensure it takes full width of the container */
+    flex-wrap: wrap;
+    gap: 0.5%;
+    padding: 5px;
+    margin: auto;
+}
+
+.accountInformation {
+    flex: 1;
+    /* Allow it to grow and fill space */
+    height: 100%;
+    /* Adjust height automatically */
+    padding: 25px;
+    /* padding: 2%; */
+
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+   
+ background-color: #f9f9f9;
+}
+.infoSection{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    gap: 2%;
+}
+.addProperty{
+    display: flex;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    background-color: #e3fdfd;
+    margin-left: 5px;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.addProperty img{
+    height: 90px;
+    width: 95px;
+}
+.addProperty button{
+    border-radius: 20px;
+    border: 2px solid whitesmoke;
+    background-color: green;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+@keyframes rotatestuff {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+.addProperty button:hover{
+    box-shadow: 14px 8px 24px rgba(0, 0, 0.5, 0.5);
+    scale: 1.01;
+}
+.purchaseHistory {
+    flex: 1;
+    /* Allow it to grow and fill space */
+    height: auto;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    background-color: #e3fdfd;
+    margin-left: 5px;
+   
+}
+
+.historyTable {
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    height: 400px;
+
+  }
+  .purchaseHistory h1{
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  .historyTable table {
+    width: 100%;
+    border: 1px solid #ccc; /* Light gray border for the table */
+  }
+  
+  .historyTable th,
+  .historyTable td {
+    padding: 12px; /* Adds space inside table cells */
+    text-align: left; /* Aligns text to the left */
+    border: 1px solid #ddd; /* Light gray border for table cells */
+  }
+  
+  .historyTable th {
+    font-family: 'Arial', sans-serif; /* Change to desired font for headers */
+    background-color: #f4f4f4; /* Light background for header */
+    color: #333; /* Dark text color for header */
+  }
+  
+  .historyTable tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light color for odd rows */
+  }
+  
+  .historyTable tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }
+  
+  .historyTable h1 {
+    text-align: center; /* Center align the h1 when no purchases */
+    color: #555; /* Gray color for the message */
+  }
+.AccountPage label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.AccountPage input {
+    width: 350px;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+
+.editForm {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.editForm input {
+    height: 44px;
+    border: none;
+    margin-bottom: 20px;
+    width: 90%;
+    border-bottom: 2px solid #71C9CE;
+    border-radius: 5px;
+    background-color: #E3FDFD;
+    padding: 0 10px;
+    /* Added padding for better touch targets */
+    transition: border-color 0.3s ease;
+    /* Smooth transition for focus effect */
+}
+
+.editForm input:focus {
+    outline: none;
+    border-bottom-color: #2AB7B3;
+    /* Change border color on focus */
+}
+
+.editForm fieldset {
+    border: none;
+    /* Removed default fieldset border */
+    border-radius: 20px;
+    padding: 40px;
+    width: 50vw;
+    background-color: #F9FAFB;
+    /* Added background color for a softer look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Added shadow for depth */
+}
+
+.editForm label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    /* Bold labels for clarity */
+}
+
+.editForm fieldset legend {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2AB7B3;
+    /* Improved legend color */
+}
+
+.editForm input[type="submit"] {
+    background-color: green;
+    color: white;
+    border: none;
+    /* Simplified button style */
+    border-radius: 30px;
+    height: 44px;
+    font-size: 22px;
+    cursor: pointer;
+    /* Indicate the button is clickable */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.editForm input[type="submit"]:hover {
+    background-color: darkgreen;
+    /* Darker green on hover */
+}
+
+.editAcc {
+    margin-bottom: 30px;
+}
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .account {
+      width: 90%;
+    }
+  
+    .accountBanner {
+      height: 30vh;
+    }
+  
+    .Propic {
+      width: 25%;
+    }
+  
+    .data {
+      flex-direction: column;
+    }
+  
+    .accountInformation {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .infoSection {
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .purchaseHistory {
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .addProperty {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .addProperty img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .accountBanner {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .Propic {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+    }
+  
+    .info {
+      text-align: center;
+    }
+  
+    .propinformation {
+      margin-left: 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .editForm fieldset {
+      width: 90vw;
+    }
+  
+    .editForm input {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .accountBanner {
+        width: 95vw;
+    }
+    .Propic {
+        width: 120px;
+        height: 120px;
+    }
+  .account .sideBar a{
+    display: none;
+
+  }
+  .accountInformation{flex-direction: row;}
+  
+    .addProperty {
+      padding: 10px;
+    }
+  
+    .addProperty img {
+      height: 60px;
+      width: 60px;
+    }
+  
+    .addProperty button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }

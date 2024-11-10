@@ -1,0 +1,85 @@
+.Navigationbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: auto;
+    background-color: rgba(224, 255, 255, 0.614);
+    /* background-color: #ADD8E6; */
+    backdrop-filter: blur(-9px);
+    border: 3px double whitesmoke;
+    border-radius: 15px;
+    height:12%; /* Flexible height */
+    width: 35%;
+    z-index: 12;
+    box-shadow: 30px 20px 30px rgba(227, 228, 237, 0.5);
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    padding: 10px; /* Added padding for better spacing */
+}
+
+/* Button Styles */
+.Navigationbar button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Navigationbar button img {
+    width: 60px;
+    height: 60px;
+    object-fit: fill;
+    background-color: transparent;
+}
+
+.Navigationbar button:hover {
+     scale:1.05;
+     opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .Navigationbar {
+        width: 50%; /* Slightly increase width on large tablets */
+    }
+
+    .Navigationbar button img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Navigationbar {
+        width: 70%; /* Increase width on smaller screens */
+        height: auto; /* Adjust height for flexibility */
+        bottom: 50px; /* Adjust bottom spacing */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .Navigationbar button img {
+        width: 45px; /* Smaller icons on mobile */
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Navigationbar {
+        width: 90%; /* Further increase width on very small screens */
+        height: auto; /* Keep height flexible */
+        bottom: 30px; /* Further adjust bottom spacing */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .Navigationbar button img {
+        width: 35px; 
+        height: 35px;
+    }
+}

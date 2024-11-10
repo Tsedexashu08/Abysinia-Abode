@@ -1,0 +1,442 @@
+* {
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.loginPage {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+
+    border: 2px solid black;
+
+}
+
+.registerpage {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.registerpage h1,
+.loginPage h1,.signuppage h1 {
+    text-align: center;
+    font-size: 64px;
+    color: #1A1B41;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.login main {
+
+    margin-top: 100px;
+}
+
+.card {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    background-color: #E3FDFD;
+    text-align: center;
+    padding: 20px;
+    color: #1A1B41;
+    border: 5px solid #71C9CE;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.card h1 {
+    font-size: 48px;
+}
+
+.card p {
+    font-size: 24px;
+}
+
+.card:hover {
+    background-color: #71C9CE;
+    border: 5px solid #E3FDFD;
+    box-shadow: 0px 10px 5px #71C9CE;
+    scale: 1.1;
+}
+
+.card:hover h1 {
+    color: #E3FDFD;
+}
+
+.card:hover p {
+    color: #E3FDFD;
+}
+
+.horizontal {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login{
+    position: absolute;
+    width: 32%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    font-size: 20px;
+    height: 55vh;
+    color: #1A1B41;
+}
+.signUp {
+    position: absolute;
+    width: 40%;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    font-size: 20px;
+    height: 55vh;
+    color: #1A1B41;
+}
+
+.agreement{
+    display: flex;
+    justify-content: left;
+    gap: 2%;
+     margin-left: 2%;
+     height: 50%;
+}
+input[type='checkbox']{
+    margin-top: -1.5%;
+}
+
+.loginPage span {
+    font-size: 15px;
+    text-align: center;
+    margin: 22%;
+}
+
+.login fieldset,
+.signUp fieldset {
+    background-color: rgba(227, 253, 253, 0.8);
+    padding: 30px;
+    border-radius: 24px;
+    border: 2px double #71C9CE;
+    }
+.signuppage fieldset{
+    margin-bottom: 4%;
+    box-shadow: 0px 10px 30px #71C9CE;
+}
+
+.login fieldset legend,
+.signUp legend {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.login input,
+.signUp input {
+    height: 20px;
+    border: none;
+    margin-bottom: 40px;
+    width: 90%;
+    height: 44px;
+    border-bottom: 2px solid #71C9CE;
+    border-radius: 5px;
+    background-color: #E3FDFD;
+}
+
+.login a {
+    font-size: 14px;
+    color: rgb(131, 131, 218);
+}
+
+.login input:focus {
+    border: 2px solid #71C9CE;
+}
+
+.login input[type='submit'],
+.signUp input[type='submit'] {
+    margin: 10px;
+    border-radius: 15px;
+    font-size: 17px;
+    text-align: center;
+    background-color: white;
+    transition: 0.3s;
+    border: 1px double #71C9CE;
+}
+
+input[type='submit']:hover {
+    background-color: #71C9CE;
+    color: #E3FDFD;
+}
+
+.signUp {
+    width: 50%;
+}
+
+.notFound {
+    background: url('../images/wave.png');
+    padding: 270px 0;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 0;
+    animation: animate 10s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes animate {
+    from {
+        background-position: -2880px 0;
+    }
+
+    to {
+        background-position: 2880px 0;
+    }
+}
+
+.house {
+    position: absolute;
+    top: 200px;
+}
+
+.bg {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+/* styles for the log in page */
+@media (max-width: 967px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .login {
+        width: 70%;
+        top: 70vh;
+        height: 90vh;
+    }
+
+    .bg {
+        top: 70vh;
+    }
+
+    .signUp {
+        width: 80%;
+    }
+
+    .signUp input {
+        background-color: white;
+    }
+
+    legend {
+        text-align: center;
+    }
+}
+/*for tablets*/
+@media (max-width: 768px) {
+    .container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+
+  /*for mobile screen*/
+
+@media (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+}  
+
+/* Styles for the login page */
+@media (max-width: 967px) {
+ h1 {
+      font-size: 48px;
+    }
+    .login {
+      width: 70%;
+      top: 70vh;
+      height: 90vh;
+    }
+    .bg {
+      top: 70vh;
+    }
+    .signUp {
+      width: 80%;
+    }
+    .signUp input {
+      background-color: white;
+    }
+    legend {
+      text-align: center;
+    }
+  }
+  
+  /* For tablets */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+
+  /* for mobile screen */
+  @media (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .login {
+      width: 100%;
+      height: auto; /* Adjusted to fit better */
+      margin-top: -160px; /* Negative margin to pull it up */
+    }
+  
+    .loginPage h1 {
+      font-size: 35px; /* Adjusted font size for better fit */
+      margin: 10px 0; /* Reduced margin for better spacing */
+      text-align: center; /* Center align the text */
+      color:#1f8ae7;
+    }
+  }
+
+
+  
+  /* Responsive page for the register page */
+  @media (max-width: 940px) {
+    .horizontal {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  
+  /* Tablet styles */
+  @media (max-width: 768px) {
+    .horizontal {
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    main h1 {
+      font-size: 1.2rem; /* Slightly adjusted font size */
+      margin-bottom: 10px;
+    }
+    
+    .horizontal {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .card {
+      margin: 10px 0; /* Center the cards */
+      width: 90%; /* Full width */
+      max-width: 300px; /* Max width to avoid being too large */
+      height: auto; /* Adapt height */
+      padding: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+      border-radius: 10px;
+      background-color: #ffffff; /* White background */
+      transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    }
+  
+    .card:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+  
+    .card h1 {
+      font-size: 1.5rem; /* Adjust heading size */
+      margin-bottom: 10px;
+    }
+  
+    .card p {
+      font-size: 1rem; /* Adjust paragraph size */
+
+    }
+}
+ 
+/* Responsive styles for the sign up page */
+
+@media(max-width: 768px) { /* Tablet and below */
+    .signUp {
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 0.8 rem; 
+    }
+}
+
+@media (max-width: 300px) { /* Mobile devices */
+    .signUp {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    h1 {
+        font-size: 0.5rem; 
+    }
+
+    input[type="submit"] {
+        font-size: 0.9rem; /* Smaller button font size */
+    }
+}
+
+/*Responsive style for not found page*/
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .notFound h1 {
+      font-size: 3rem;
+    }
+    .notFound p {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Tablet styles */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .notFound h1 {
+      font-size: 2.5rem;
+    }
+    .notFound p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .notFound {
+      width: 95vw;
+      margin-left: 2.5%;
+      padding: 15px;
+    }
+    .notFound h1 {
+      font-size: 2rem;
+    }
+    .notFound p {
+      font-size: 1rem;
+    }
+  }

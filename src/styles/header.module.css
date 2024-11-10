@@ -1,0 +1,139 @@
+.header {
+  /* padding: 10px; */
+  height: 7%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  
+
+  background-color: #e3fdfd;
+
+}
+
+/* container for displaying account pic(profile photo) */
+.header .accountPhoto{
+  background-color: white;
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top:-6.5%;/*so the account link stays in the middle(ik its stupid but ocd made me do it!)*/
+
+  /* background-image: url('../images/user.png'); */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border :3px double #0ca4a5;
+}
+.accountPhoto img{
+  position: relative;  
+  width: 53px;
+  height: 49px;
+  object-fit: cover;
+  object-position: center; 
+}
+/*app title(Abyssiniya Abode)*/
+.header .heading {
+  display: block;
+  color: #0ca4a5;
+  font-size: 30px;
+  margin-left:10px;
+  font-weight: 700;
+  padding: 14px;
+}
+.header a{
+  white-space: normal;
+  font-size: 150%;
+  text-decoration: none;
+  padding-top:2% ;
+}
+
+.header svg{
+  margin-bottom: 5px;
+  margin-left: 10px;
+  display: none;
+}
+
+.header .account{
+  height: 100%;
+  
+  display: flex;
+  
+  justify-content: right;
+  justify-items: center;
+
+  gap: 6%;
+  margin-left: 40%;
+ 
+  padding: 1%;
+  text-align: center;
+}
+
+/*  */
+@media (max-width: 967px) {
+  .header{
+    align-items: center;
+    height: 10%;
+    padding-left: 30px;
+  }
+  .header .heading{
+    font-size: 3vh; /* Adjusts size based on viewport width */
+  }
+ 
+
+}
+
+@media (max-width: 768px) {
+  .header{
+    height: 6%;
+    padding-left: 20px;
+    gap: 1%;
+    text-align: center;
+  }
+
+  .header heading{
+    font-size: 22px; /* Adjusts size based on viewport width */
+    margin-left: 2px;
+  }
+  .header .accountPhoto{
+
+    width: 45px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top:-1%;/*so the account link stays in the middle(ik its stupid but ocd made me do it!)*/
+
+  }
+  .account a{
+    display: block;
+    margin-top: 1%;
+  }
+  
+.header .account{
+
+  gap: 6%;
+  margin-left: 20%;
+ 
+  padding: 1%;
+  text-align: center;
+}
+.header a{
+  white-space: normal;
+  font-size: 130%;
+  text-decoration: none;
+  padding-top:2% ;
+}
+}
+@media (max-width: 500px) {
+  .header{
+    height: 7%;
+    padding-left: 20px;
+  }
+
+  .header .heading{
+    font-size: 2.5vh; /* Adjusts size based on viewport width */
+  }
+}

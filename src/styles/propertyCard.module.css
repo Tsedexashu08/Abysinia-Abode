@@ -1,0 +1,239 @@
+/*a single card item with property info*/
+.card {
+  position: relative;
+  background-color: #e3fdfd;
+  border: 1px double #71c9ce;
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 24%;
+
+  height: 400px;
+  padding: 0.3%;
+  margin-top: 1%;
+  border-radius: 10px;
+  margin-bottom: 1%;
+
+  box-shadow: 14px 8px 14px rgba(0, 0, 0.5, 0.5);
+  text-align: center;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.card h3 {
+  margin-bottom: 5px;
+}
+
+.card:hover,
+.offerCard:hover,
+.eventCard:hover {
+  scale: 1.05;
+  transition: ease-in-out 0.4s;
+  transform: translateY(-10px) scale(1.05) rotate(2deg); 
+ 
+  opacity: 0.9;
+  background-color: #cbf1f5;
+}
+
+.card:active,
+.offerCard:active,
+.eventCard:active {
+  background-color: #71c9ce;
+  
+}
+
+.card #propImg {
+  /* property image on the card */
+  height: 100%;
+  width: 100%;
+
+  background-color: white;
+  /* border: 1px solid gray; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+@keyframes fadeUpText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.propInfo {
+  /* Card with amount of property owned and sold in account page */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  gap: 10px; /* Added spacing between elements */
+
+  width: 15vw; /* Slightly wider for better content fit */
+  height: 15vh; /* Increased height for a more balanced look */
+  
+  margin-top: 4%;
+  margin-left: auto; /* Center the card in the container */
+  margin-right: auto; /* Center the card in the container */
+  
+  padding: 20px; /* Uniform padding */
+  
+  background-color: wheat; /* Background color */
+  border-radius: 20px; /* Rounded corners */
+  border-top-left-radius: 0; /* Preserve top left corner */
+
+  animation:fadeUpText 1s ease-out forwards; 
+  animation-delay: 0.05s;
+  transition: transform 0.5s ease; 
+
+  color: gray; /* Text color */
+  background: none;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+       -4px -4px 6px 0 rgba(255,255,255,.2),
+       4px 4px 6px 0 rgba(0, 0, 0, .4);
+    border-radius: 30px;
+    letter-spacing: 1px;
+    z-index: 1;
+
+    transition: 0.6s;
+  
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.propInfo:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.propInfo h2, .propInfo h3 {
+  margin: 0; /* Remove default margins */
+}
+
+/* Optional: Add styles for specific text elements, if needed */
+.propInfo h2 {
+  font-size: 1.5em; /* Larger font size for headings */
+}
+
+
+
+.card h4 {
+  margin-left: 2%;
+
+}
+
+.eventCard {
+
+  width: 80%;
+  position: relative;
+  background-color: #e3fdfd;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 24%;
+  height: 90%;
+  padding: 1%;
+  margin-top: 1%;
+  border-radius: 2%;
+  box-shadow: 14px 8px 14px rgba(0, 0, 1, .5);
+  text-align: center;
+  
+  animation: scroll 10s linear infinite;
+  animation-delay: 1s
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(30%);
+  }
+
+  100% {
+    transform: translateX(100%);
+    /* Scroll left */
+  }
+}
+
+.offerCard {
+  width: 100%;
+
+  position: relative;
+  background-color: #e3fdfd;
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 24%;
+  /* Each card added will be 27% wide */
+
+  height: 70%;
+  padding: 1%;
+  margin-top: 1%;
+  border-radius: 2%;
+
+  box-shadow: 14px 8px 14px rgba(0, 0, 0.5, 0.5);
+  text-align: center;
+  animation: scrollBack 10s linear infinite;
+  /* Animation for scrolling */
+  animation-delay: 1s;
+}
+
+@keyframes scrollBack {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Scroll right */
+  }
+}
+
+/* Responsivness will be handeled once i figure out the kinks of this library. */
+
+@media(max-width:967px) {
+  .card:hover {
+    scale: 1.1;
+    transition: ease-in-out 0.2s;
+    opacity: 0.9;
+    background-color: aqua;
+  }
+
+  offerCard {
+    flex: 0 0 30%;
+    /* Three cards per row */
+  }
+
+}
+
+
+
+/* ive added code here*/
+@media (max-width: 768px) {
+
+  /* Tablet Breakpoint */
+  .card {
+    flex: 0 0 48%;
+    /* Adjust width for tablets */
+  }
+
+  .offerCard {
+    flex: 0 0 50%;
+    /* One card per row on smaller screens */
+
+  }
+}
+
+@media (max-width: 500px) {
+
+  /* Mobile Breakpoint */
+  .card {
+    flex: 0 0 100%;
+    /* Full width on mobile */
+    height: auto;
+    /* Adjust height automatically */
+  }
+}
