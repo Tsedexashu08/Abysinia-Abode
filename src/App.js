@@ -49,7 +49,6 @@ function App() {
                         <Route path='/rooms' element={isAuthenticated ? <Rooms /> : <Navigate to="/404-notFound" />} />
                         <Route path='/addevent' element={isAuthenticated ? <AddEvent /> : <Navigate to="/404-notFound" />} />
                     </Route>
-
                     {/* Catch-all route for displaying Not Found page mak made so user cant just type url without logging in */}
                     <Route path='*' element={<NotFound />} />
                 </Routes>

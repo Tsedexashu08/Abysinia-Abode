@@ -34,30 +34,30 @@
     box-shadow: 14px 8px 44px rgba(0.5, 0, 0.5, 0.5);
 }
 
-h1 {
+.termspage h1,.privacypage h1 {
     font-size: 2em; /* Larger font size for main title */
     margin-bottom: 20px; /* Space below the title */
     color: #0ca4a5; /* Darker text color */
 }
 
-h2 {
+.termspage h2,.privacypage h2 {
     font-size: 1.5em; /* Slightly smaller than h1 */
     margin-top: 20px; /* Space above the section titles */
     margin-bottom: 10px; /* Space below the section titles */
     color: #0ca4a5;
 }
 
-p {
+.termspage p,.privacypage p {
     margin-bottom: 15px; /* Space below paragraphs */
 }
 
-ul {
+.termspage ul,.privacypage ul {
     list-style-type: disc; /* Use bullet points */
     margin-left: 20px; /* Indent the list */
     margin-bottom: 15px; /* Space below lists */
 }
 
-li {
+.termspage li ,.privacypage li{
     margin-bottom: 8px; /* Space below list items */
 }
 
