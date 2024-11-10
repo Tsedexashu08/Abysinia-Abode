@@ -82,7 +82,7 @@ function Account_Page() {
         <Link className={style.links} to="/myproperties"><img src={propertyIcon} alt="edit" />My Properties</Link>
         <Link className={style.links} to='/addevent'><img src={eventIcon} />Add event</Link>
         <Link className={style.links} to='/' onClick={logout}><img src={logoutIcon} />Log Out</Link>
-        {/* calling logout functio on logout to reset authentication state in sessionStorage(so user has to login again&cant use url for navigation) */}
+        {/* calling logout functio on logout to reset authentication state in sessionStorage(so user has to login again & can't use url for navigation) */}
       </div>
 
       <div className={style.account}>

@@ -1,4 +1,3 @@
-// AuthContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
@@ -27,4 +26,4 @@ export const AuthProvider = ({ children }) => {//component for authenticating lo
     );
 };
 
-export const useAuth = () => useContext(AuthContext);//exporting the contexts(dont worry about what they are..they just what we use to pass to pass the methods defined here to other components)
+export const useAuth = () => useContext(AuthContext);//exporting the contexts(dont worry about what they are..they just what we use to pass  the methods defined here to other components)
