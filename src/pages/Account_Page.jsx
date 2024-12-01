@@ -9,11 +9,10 @@ import style from '../styles/acountStyle.module.css'
 import AccountBanner from '../components/AccountBanner'
 import { getDateOfBirth } from '../components/functions';
 import { useOutletContext } from 'react-router-dom';
+import { useRef } from 'react';
 import img from '../images/settings.png'
 import avatar from '../images/avatar.png'
-
-
-
+import menu from '../images/menu.png'
 
 
 function Account_Page() {
@@ -63,7 +62,7 @@ function Account_Page() {
 
         const data = await response.json();
         console.log('User Fetch Success:', data);
-        setPurchases(data.data || []); // Adjusted to handle data correctly
+        setPurchases(data.data || []);
       } catch (error) {
         console.error('Fetch Error:', error);
         setPurchases([]);
@@ -74,103 +73,145 @@ function Account_Page() {
     fetchUserReservations() // Starting by fetching user data and setting the relevant information in the account page..;
   }, []);
 
+  const [isSidebarVisible, setSidebarVisible] = useState(true);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropdownVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={`${style.AccountPage}`}>
-      <div className={`${style.sideBar}`}>
-        <span className={style.general}><img src={img} alt="" />General</span>
-        <Link className={style.links} to="/editAccount"><img src={editIcon} alt="edit" /> Edit Account</Link>
-        <Link className={style.links} to="/myproperties"><img src={propertyIcon} alt="edit" />My Properties</Link>
-        <Link className={style.links} to='/addevent'><img src={eventIcon} />Add event</Link>
-        <Link className={style.links} to='/' onClick={logout}><img src={logoutIcon} />Log Out</Link>
-        {/* calling logout functio on logout to reset authentication state in sessionStorage(so user has to login again & can't use url for navigation) */}
-      </div>
-
-      <div className={style.account}>
-        <div className={style.accountInfo}>
-
-          <AccountBanner img={`http://localhost/Abysinia-Abode/src/api/${account.profile_pic}`}
-            accountName={account.username}
-            accountType={`${account.account_type}`}
-            propertyAmount={`${account.properties_owned}`}
-            propertySold={`${account.properties_sold}`}
-          />
-
-
+    <>
+      <button className={style.menu} onClick={toggleDropdown}>
+        <img src={img} alt="Menu" />
+      </button>
+      {isDropdownVisible && (
+        <div className={style.dropdown} ref={dropdownRef}>
+          <Link className={style.links} to="/editAccount">
+            <img src={editIcon} alt="edit" /> Edit Account
+          </Link>
+          <Link className={style.links} to="/myproperties">
+            <img src={propertyIcon} alt="edit" /> My Properties
+          </Link>
+          <Link className={style.links} to="/addevent">
+            <img src={eventIcon} alt="" /> Add Event
+          </Link>
+          <Link className={style.links} to="/" onClick={logout}>
+            <img src={logoutIcon} alt="" /> Log Out
+          </Link>
         </div>
-        <div className={style.data}>
-          <div className={style.infoSection}>
+      )}
+      <div className={`${style.AccountPage}`}>
+        <nav className={`${style.sideBar} ${isSidebarVisible ? 'visible' : 'hidden'}`}>
+          <span className={style.general}><img src={img} alt="" />General</span>
+          <Link className={style.links} to="/editAccount"><img src={editIcon} alt="edit" /> Edit Account</Link>
+          <Link className={style.links} to="/myproperties"><img src={propertyIcon} alt="edit" />My Properties</Link>
+          <Link className={style.links} to='/addevent'><img src={eventIcon} alt="" />Add Event</Link>
+          <Link className={style.links} to='/' onClick={logout}><img src={logoutIcon} alt="" />Log Out</Link>
+        </nav>
 
-            <div className={style.accountInformation}>
-              <section>
 
-                <label htmlFor="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" value={account.full_name} /><br />
 
-                <label htmlFor="email">email:</label>
-                <input type="text" id="email" name="email" value={account.email} /><br />
+        <div className={style.account}>
+          <div className={style.accountInfo}>
 
-                <label htmlFor="dob">Date of Birth:</label>
-                <input type="text" id="dob" name="dob" value={getDateOfBirth(account.age)} /><br />
+            <AccountBanner img={`http://localhost/Abysinia-Abode/src/api/${account.profile_pic}`}
+              accountName={account.username}
+              accountType={`${account.account_type}`}
+              propertyAmount={`${account.properties_owned}`}
+              propertySold={`${account.properties_sold}`}
+            />
 
-                <label htmlFor="nationality">Nationality:</label>
-                <input type="text" id="nationality" name="nationality" value={account.nationality} /><br />
-              </section>
-              <section>
 
-                <label htmlFor="tel">Telephone:</label>
-                <input type="tel" id="tel" name="tel" value={account.phone_no} /><br />
-
-                <label htmlFor="user">Username:</label>
-                <input type="text" id="user" name='user' value={account.username} /><br />
-
-                <label htmlFor="pass">Password:</label>
-                <input type="password" id="pass" name="pass" value={account.password} /><br />
-
-                <label htmlFor="user">created at:</label>
-                <input type="text" id="createdate" name='createdate' value={account.created_at} /><br />
-              </section>
-
-            </div>
-            <div className={style.addProperty}>
-              <img src={avatar} alt="pointin Avatar" />
-              <button onClick={() => { navigate('/addProperty') }}>Add Property</button>
-            </div>
           </div>
-          <div className={style.purchaseHistory}>
-            <h2>Purchase History</h2>
-            <div className={style.historyTable}>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Purchase History</th>
-                    <th>Cost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {purchases.length > 0 ? (
-                    purchases.map((purchase, index) => (
-                      <tr key={index}>
-                        <td>{purchase.property_name}</td>
-                        <td>{purchase.purchase_date}</td>
-                        <td>{purchase.property_price}</td>
-                      </tr>
-                    ))
-                  ) : (
+          <div className={style.data}>
+            <div className={style.infoSection}>
+
+              <div className={style.accountInformation}>
+                <section>
+
+                  <label htmlFor="fullname">Full Name:</label>
+                  <input type="text" id="fullname" name="fullname" value={account.full_name} /><br />
+
+                  <label htmlFor="email">email:</label>
+                  <input type="text" id="email" name="email" value={account.email} /><br />
+
+                  <label htmlFor="dob">Date of Birth:</label>
+                  <input type="text" id="dob" name="dob" value={getDateOfBirth(account.age)} /><br />
+
+                  <label htmlFor="nationality">Nationality:</label>
+                  <input type="text" id="nationality" name="nationality" value={account.nationality} /><br />
+                </section>
+                <section>
+
+                  <label htmlFor="tel">Telephone:</label>
+                  <input type="tel" id="tel" name="tel" value={account.phone_no} /><br />
+
+                  <label htmlFor="user">Username:</label>
+                  <input type="text" id="user" name='user' value={account.username} /><br />
+
+                  <label htmlFor="pass">Password:</label>
+                  <input type="password" id="pass" name="pass" value={account.password} /><br />
+
+                  <label htmlFor="user">created at:</label>
+                  <input type="text" id="createdate" name='createdate' value={account.created_at} /><br />
+                </section>
+
+              </div>
+              <div className={style.addProperty}>
+                <img src={avatar} alt="pointin Avatar" />
+                <button onClick={() => { navigate('/addProperty') }}>Add Property</button>
+              </div>
+            </div>
+            <div className={style.purchaseHistory}>
+              <h2>Purchase History</h2>
+              <div className={style.historyTable}>
+                <table>
+                  <thead>
                     <tr>
-                      <td colSpan="3" style={{ textAlign: 'center' }}>
-                        <h1>No purchase history...</h1>
-                      </td>
+                      <th>Name</th>
+                      <th>Purchase History</th>
+                      <th>Cost</th>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {purchases.length > 0 ? (
+                      purchases.map((purchase, index) => (
+                        <tr key={index}>
+                          <td>{purchase.property_name}</td>
+                          <td>{purchase.purchase_date}</td>
+                          <td>{purchase.property_price}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="3" style={{ textAlign: 'center' }}>
+                          <h1>No purchase history...</h1>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

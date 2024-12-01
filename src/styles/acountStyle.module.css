@@ -15,6 +15,7 @@
     padding: 15px;
   
     position: relative;
+    overflow: hidden;
 
     animation: fadeUpText 1s ease-out forwards;
     transition: transform 0.5s ease;
@@ -95,6 +96,28 @@
     /* margin: auto; */
     margin-top: 3%;
 }
+.menu{
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    z-index: 20;
+    border-radius: 50%;
+   
+    display: none;
+    width: 50px;
+    height: 55px;
+    @media (max-width:480px) {
+        display: block;
+    }
+}
+.menu  img{
+    position: relative;
+    width: 150%;
+    height: 150%;
+    object-position: center;
+    object-fit: fill;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
 .accountInfo {
     display: flex;
@@ -115,12 +138,14 @@
 }
 
 .AccountPage .sideBar {
+    
     background-color: #e3fdfd;
     /* Light background color */
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    top: anchor(top);
   
     justify-content: flex-start;
     
@@ -135,7 +160,34 @@
     transition: transform 0.3s ease;
  
 }
+.dropdown {
+  position: absolute; /* Position dropdown relative to the button */
+  top: 120px; /* Adjust based on your layout */
+  left: 0;
+  background: white; /* Background color */
+  border: 1px solid #ddd; /* Border for the dropdown */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 250px; /* Width of the dropdown */
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  transition: 0.5s ease;
+  animation: fadeIn 0.5s;
+}
 
+.dropdown .links {
+  padding: 10px 20px; /* Padding for links */
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+}
+.menu img:hover{
+    background-color: white;
+    scale: 1.01;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+.dropdown .links:hover {
+  background: #f0f0f0; /* Background color on hover */
+}
 .AccountPage .sideBar:hover {
     transform: translateX(10px);
     /* Subtle slide effect on hover */
@@ -325,18 +377,20 @@
     border-radius: 50%;
     background-color: white;
 
-    background-size: cover;
+ 
+    background-size: cover; 
     background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    background-repeat: no-repeat; 
+    overflow: hidden; /* Ensures any overflow is hidden */
     border: 5px double #19c7d0;
 }
 
 .Propic:hover {
     transform: scale(1.1);
     box-shadow: 10px 10px 15px #19c7d0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    rotate: transform(-0.5em);
+     rotate:8deg ;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+  
     
 }
 
@@ -427,7 +481,7 @@
     width: 100%;
     height: auto;
     /* Ensure it takes full width of the container */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 0.5%;
     padding: 5px;
     margin: auto;
@@ -666,8 +720,8 @@
     .purchaseHistory {
       width: 100%;
       margin-top: 20px;
-    }
-  
+        }
+
     .addProperty {
       flex-direction: column;
       padding: 15px;
@@ -680,7 +734,7 @@
   }
   
   @media (max-width: 768px) {
-    .accountBanner {
+      .accountBanner {
       flex-direction: column;
       height: auto;
       padding: 20px;
@@ -709,11 +763,21 @@
     .editForm input {
       width: 100%;
     }
+    .AccountPage .sideBar{
+        display: none;
+    }
+    .menu{
+        display: inline;
+    }
   }
   
   @media (max-width: 480px) {
+    .AccountPage{
+        margin-top: 5%;
+    }
     .accountBanner {
         width: 95vw;
+        margin-top: 6%;
     }
     .Propic {
         width: 120px;
@@ -723,7 +787,22 @@
     display: none;
 
   }
-  .accountInformation{flex-direction: row;}
+  .accountInformation{
+    flex-direction: column;
+    padding-left: 45px;
+   
+}
+  .accountInformation input{
+    max-width: 90%;
+    width: 300px;
+  }
+ .data{
+    flex-direction: column;
+ }
+ .purchaseHistory{
+    display: block;
+    position: relative;
+ }
   
     .addProperty {
       padding: 10px;
@@ -737,5 +816,12 @@
     .addProperty button {
       padding: 8px 16px;
       font-size: 14px;
+    }
+   .AccountPage .sideBar {
+        display: none;
+    }
+    .Propic{
+        width: 200px;
+        height: 200px;
     }
   }

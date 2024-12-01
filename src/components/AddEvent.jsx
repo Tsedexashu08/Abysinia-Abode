@@ -34,11 +34,11 @@ function AddEvent() { // Component for adding events
 
     console.log(event); // Log event state for debugging
 
-    // Handle selection of property
     const handleSelect = (e) => {
         const option = e.target.value; // Get selected option value
-        setPropertyname({ name: option }); // Update property name state
-    }
+        setPropertyname(option); // Update property name state directly as a string
+        setEvent((prevEvent) => ({ ...prevEvent, property_name: option })); // Add property_name to the event state
+    };
 
     // Handle changes in input fields
     const handleChange = (e) => {
@@ -75,14 +75,14 @@ function AddEvent() { // Component for adding events
         })
             .then(response => {
                 console.log(response.data); // Log response data
-                navigate('/home'); // Navigate to home on successful submission
+                // navigate('/home'); // Navigate to home on successful submission
             })
             .catch(error => {
                 console.error('Error:', error); // Log any errors during submission
             });
     }
 
-    console.log('property name: '+propertyname); // Log selected property name for debugging
+  
 
     return (
         <div>
@@ -98,12 +98,12 @@ function AddEvent() { // Component for adding events
                     {/* Form group for selecting host venue */}
                     <div className={style.formGroup}>
                         <label htmlFor="property_name">Host Venue</label>
-                        <select id="property_name" name="property_name" required onChange={handleChange}>
+                        <select id="property_name" name="property_name" required onChange={handleSelect}>
                             {/* Fetching the property names from the database for selection */}
                             {
                                 properties.length > 0 ? (
                                     properties.map((property) => (
-                                        <option key={property.property_name} value={property.property_name}>{property.property_name}</option> // Add key prop for list items
+                                        <option key={property.property_name} value={property.property_name}>{property.property_name}</option> 
                                     ))
                                 ) : (
                                     <h1>No properties for hosting</h1> // Message if no properties are available

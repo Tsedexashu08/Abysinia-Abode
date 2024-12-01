@@ -205,6 +205,7 @@
     text-align: center;
     height: 85%;
     margin-top: 0.8%;
+   
 }
 
 .Main {
@@ -351,8 +352,12 @@
     padding: 5px;
 }
 .Main{
-    display: flex;
+    display: block;
     align-items: center;
+    justify-items : center;
+    overflow: hidden;
+    gap: 2%;
+
 }
 
     .searchSection {
@@ -374,20 +379,25 @@
 
     .eventsection {
         border-top-left-radius: 0;
-        height: auto;
+        height: 100%;
     }
-
+    .errorPopup{
+        font-size: 14px;
+    }
     .eventsection h1 {
         font-size: 30px;
     }
-     .offersection{
+    .offersection{
+         border: 1px solid black;
         margin-top: -1em;
         height: auto;
      }
     .offersection h1 {
         font-size: 30px;
     }
-
+  .texts{
+    align-items: center;
+  }
     .texts h1 {
         text-align: left;
         font-size: 40px;
@@ -396,6 +406,7 @@
 
     .texts button {
         width: 50%;
+        margin-left: -1%;
     }
     /* up to here */
 
@@ -404,5 +415,29 @@
     }
     .Main button{
         margin: auto;
+        height: 59px;
+        width: 50px;
+        margin-top: 1%;
+        margin-left: 0.1%;
+   
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        
+    }
+    .searches input{
+        font-size: 23px;
+        margin-top: 0.5%;
+        /* border: 1px solid black; */
+        height: 53px;
+        text-align: left;
+        margin-left: 9%;
+    }
+    .searchbar img {
+        width: 34px; 
+        height: auto;
+        margin-top: 0.3%;
+        margin: auto;
+        padding: auto;
     }
 }
+    

@@ -80,11 +80,12 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .lists {
         /* flex-direction: column; Stack items vertically on mobile */
-        height: auto; /* Adjust height for flexibility */
-        gap: 1%;
+        height: auto; 
+        gap: 3%;
+        width: 100%;
     }
 
     .lists img {

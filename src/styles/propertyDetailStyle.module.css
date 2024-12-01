@@ -114,7 +114,7 @@ background-color: #80deea;
 
 .roomsPage {
   width: 100%;
-  height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px;
   overflow: hidden;
   display: flex;
@@ -148,10 +148,10 @@ background-color: #80deea;
   }
 }
 
-.container {
+ .container {
   padding: 20px;
   max-width: 1400px;
-  height: max-content;
+  height: auto;
   margin: auto;
   margin-top: 4%;
   margin-bottom: 4%;

@@ -96,7 +96,7 @@ function MainSearch() {//the search bar in home page.(this searches what reserva
         <>
             <div className={`${style.Main}`}>
                 <div className={`${style.searches}`}>
-                    <input type='text' onChange={handleDestination} placeholder='search for your reservations ....' value={destination} />
+                    <input type='text' onChange={handleDestination} placeholder='search for your reservations...' value={destination} />
                 </div>
 
                 <button onClick={handleSearch}><img src={searchIcon} alt="" /></button>
