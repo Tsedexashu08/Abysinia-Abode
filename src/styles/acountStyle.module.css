@@ -98,7 +98,7 @@
 }
 .menu{
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 25px;
     z-index: 20;
     border-radius: 50%;
@@ -150,7 +150,7 @@
     justify-content: flex-start;
     
     padding-top: 130px;
-    width: 30%;
+    width: 25%;
     height: auto;
    
     color: rgb(62, 62, 62);
@@ -773,7 +773,7 @@
   
   @media (max-width: 480px) {
     .AccountPage{
-        margin-top: 5%;
+        margin-top: 7%;
     }
     .accountBanner {
         width: 95vw;

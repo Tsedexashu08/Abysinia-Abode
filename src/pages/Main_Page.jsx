@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
+
 function MainPage() {
     const [headerKey, setHeaderKey] = useState(0);
     const handleOutletChange = () => {
@@ -16,7 +17,7 @@ function MainPage() {
             <NavigationBar />
             <div className={style.mainPage}>
                 <Header key={headerKey} />
-                <main>
+                <main className={style.main}>
                     <Outlet context={{ onChange: handleOutletChange }} />
                 </main>
                 <Footer />

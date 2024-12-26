@@ -11,17 +11,23 @@ function SearchPanel({ onSearch, onSort, searchesFound }) {
     const handleInputChange = (e) => {//function for passing the search input typed in value to propertiy list page.
         const value = e.target.value;
         onSearch(value);
+        const lbl = document.getElementById('searchResult')
+        const input = document.getElementById('input')
+        if (input.value === '')//making searchs found label visible  when smtn bein searched.
+            lbl.style.display = 'none'
+        else
+            lbl.style.display = 'block'
     };
-    const handleSelectChange=(e)=>{//function for passing the selected option to propertiy list page.
+    const handleSelectChange = (e) => {//function for passing the selected option to propertiy list page.
         const option = e.target.value
         onSort(option)
     }
     return (
         <div className={searchPanelStyle.searchDiv}>
-            <label id='searchResult'><b>#{searchesFound} Searches Found</b></label>
+            <label id='searchResult'><b>{searchesFound} Searches Found</b></label>
             <div className={searchPanelStyle.search}>
                 <img src={searchIcon} alt='search-icon' />
-                <input type="text" placeholder="  Search place by name" onChange={handleInputChange}></input>
+                <input id="input" placeholder="  Search place by name" onChange={handleInputChange}></input>
             </div>
             <select onChange={handleSelectChange}>
                 <option value=''>Filter by</option>

@@ -4,9 +4,7 @@
   /* is the property details component container. */
   width: 900px;
 
-  height: 100vh;
-
-  padding: 20px;
+   padding: 20px;
   overflow: auto;
   display: flex;
   flex-direction: column;

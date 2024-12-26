@@ -3,121 +3,126 @@
   position: sticky;
   top: 0;
   width: 100%;
-  height: auto; /* Flexible height */
+  height: auto;
   border-bottom: 4px solid #caebec;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row; /* Keep items in a row */
+  flex-wrap: nowrap; /* Prevent wrapping */
   justify-content: center;
   align-items: center;
-  background-color: white;
-  gap: 2%;
-  padding: 10px 0; /* Added padding for better spacing */
-  z-index: 1000; /* Ensure it stays on top */
+  gap: 10px; /* Adjusted gap for better spacing */
+  padding: 15px; /* Increased padding for better spacing */
+  z-index: 1000;
 }
 
-/* style for search box (its a div so we can include the search icon) */
+/* style for search box (includes the search icon) */
 .searchDiv .search {
   display: flex;
   align-items: center;
   background-color: #e3fdfd;
   border-radius: 35px;
-  border: 2px double #0ca4a5;
+  border: 2px solid #0ca4a5; /* Solid border for a cleaner look */
   padding: 10px 15px;
-  width: 80%;
+  width: 70%; /* Adjusted width for better layout */
   max-width: 700px;
   height: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 1%;
 }
 
-/* this is styling for the search text box */
+/* styling for the search text box */
 .searchDiv input {
   border: none;
   outline: none;
   background: transparent;
   flex: 1;
-  font-size: 18px; /* Adjusted font size */
+  font-size: 18px;
   padding: 5px;
   border-radius: 35px;
 }
 
+/* search icon styling */
 .searchDiv .search img {
-  width: 28px; /* Adjusted size for better responsiveness */
+  width: 28px;
   height: 28px;
   margin-right: 10px;
+  transition: transform 0.3s; /* Smooth transition for hover effect */
 }
 
+.searchDiv .search img:hover {
+  transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+/* styling for filter options */
 .searchDiv select {
-  width: fit-content;
-  background-color: #e3fdfd;
+  background-color: #ffffff; /* White background for contrast */
   border-radius: 20px;
-  border: 2px double #0ca4a5;
-  height: 55%;
-  font-size: 19px; /* Adjusted font size */
-  padding: 5px;
+  border: 2px solid #0ca4a5; /* Solid border for a cleaner look */
+  padding: 10px 12px; /* Increased padding for better touch targets */
+  font-size: 14px; /* Font size for select dropdown */
+  cursor: pointer; /* Indicate that it's clickable */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: auto; /* Adjust width to fit content */
+  margin-bottom: 1%;
 }
 
+/* label styling */
 .searchDiv label {
-  font-size: 18px; /* Adjusted font size */
+  font-size: 16px;
   color: #0ca4a5;
+  display: none; /* Hidden by default */
+  position: absolute; /* Take it out of the flow */
+  top:70%; /* Position it above the search bar */
+  right: 47%;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
   .searchDiv .search {
-    width: 90%; /* Increase width on larger tablets */
+    width: 80%; /* Adjusted width for tablet screens */
   }
-
   .searchDiv input {
-    font-size: 16px; /* Adjusted font size */
+    font-size: 16px;
   }
-
   .searchDiv select {
-    font-size: 14px; /* Adjust font size for select dropdown */
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
   .searchDiv {
-    padding: 10px 0; /* Adjust padding for smaller screens */
+    padding: 10px;
   }
-
   .searchDiv .search {
-    width: 95%; /* Further increase width on smaller tablets */
+    width: 90%; /* Further increase width on smaller tablets */
   }
-
   .searchDiv input {
-    font-size: 14px; /* Adjusted font size */
+    font-size: 14px;
   }
-
   .searchDiv select {
-    font-size: 12px; /* Adjust font size for select dropdown */
+    font-size: 12px;
   }
-
   .searchDiv .search img {
-    width: 24px; /* Smaller icon size for mobile */
+    width: 24px;
     height: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .searchDiv {
-    padding: 5px 0; /* Adjust padding for mobile */
+    padding: 5px;
   }
-
   .searchDiv .search {
     width: 100%; /* Full width on mobile */
   }
-
   .searchDiv input {
-    font-size: 12px; /* Adjusted font size */
+    font-size: 12px;
   }
-
   .searchDiv select {
-    font-size: 12px; /* Adjust font size for select dropdown */
+    font-size: 12px;
   }
-
   .searchDiv .search img {
-    width: 20px; /* Smaller icon size for mobile */
+    width: 20px;
     height: 20px;
   }
 }

@@ -53,7 +53,7 @@ function RoomsPage() {
   };
 
   return (
-    <div className={style.roomspage}>
+    // <div className={style.roomspage}>
       <div className={style.container}>
               <div className={style.propertyList}>
                 {propertyInfo.map((property) => (
@@ -110,7 +110,7 @@ function RoomsPage() {
           )}
         </main>
       </div>
-    </div>
+    // </div>
   );
 }
 

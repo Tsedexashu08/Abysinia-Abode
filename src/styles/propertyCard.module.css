@@ -1,21 +1,21 @@
-/*a single card item with property info*/
 .card {
   position: relative;
   background-color: #e3fdfd;
   border: 1px double #71c9ce;
-
   display: flex;
   flex-direction: column;
   flex: 0 0 24%;
-
-  height: 400px;
-  padding: 0.3%;
+  height: 400px; /* Keep the original card height */
+  padding: .3%;
   margin-top: 1%;
   border-radius: 10px;
   margin-bottom: 1%;
-
-  box-shadow: 14px 8px 14px rgba(0, 0, 0.5, 0.5);
+  box-shadow: 14px 8px 14px rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+.eventCard, .propInfo {
+  flex-direction: column;
 }
 
 .card p {
@@ -27,37 +27,29 @@
   margin-bottom: 5px;
 }
 
-.card:hover,
-.offerCard:hover,
-.eventCard:hover {
+.card:hover, .eventCard:hover, .offerCard:hover {
   scale: 1.05;
-  transition: ease-in-out 0.4s;
-  transform: translateY(-10px) scale(1.05) rotate(2deg); 
- 
-  opacity: 0.9;
+  transition: .4s ease-in-out;
+  transform: translateY(-10px) scale(1.05) rotate(2deg);
+  opacity: .9;
   background-color: #cbf1f5;
 }
 
-.card:active,
-.offerCard:active,
-.eventCard:active {
+.card:active, .eventCard:active, .offerCard:active {
   background-color: #71c9ce;
-  
 }
 
+/* Adjust the image size to take 75% of the card height */
 .card #propImg {
-  /* property image on the card */
-  height: 90%;
-  width: 100%;
-
-  
-
-  background-color: white;
-  /* border: 1px solid gray; */
+  height: 75%; /* Adjusted height to 75% of the card */
+  width: 100%; /* Full width */
+  background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   position: relative;
+  object-fit: cover; /* Maintain aspect ratio */
 }
+
 @keyframes fadeUpText {
   from {
     opacity: 0;
@@ -68,196 +60,133 @@
     transform: translateY(0);
   }
 }
+
 .propInfo {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-
-  width: 80%; /* Changed from 15vw to 80% for better mobile responsiveness */
-  max-width: 300px; /* Set a max-width for larger screens */
-  height: auto; /* Allow height to adjust based on content */
-  
-  margin: 4% auto; /* Center the card in the container */
-  
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin: 4% auto;
   padding: 20px;
-  
-  background-color: wheat;
-  border-radius: 20px;
-  border-top-left-radius: 0;
-
-  animation: fadeUpText 1s ease-out forwards; 
-  animation-delay: 0.05s;
-  transition: transform 0.5s ease; 
-
+  border-radius: 30px;
+  animation: 1s ease-out 50ms forwards fadeUpText;
+  transition: .6s;
   color: gray;
-  background: none;
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-              -4px -4px 6px 0 rgba(255, 255, 255, .2),
-              4px 4px 6px 0 rgba(0, 0, 0, .4);
-    border-radius: 30px;
-    letter-spacing: 1px;
-    z-index: 1;
-
-  transition: 0.6s;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: 0 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0 rgba(116, 125, 136, .5), -4px -4px 6px 0 rgba(255, 255, 255, .2), 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
 .propInfo:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
 }
 
 .propInfo h2, .propInfo h3 {
   margin: 0;
 }
 
-/* Adjust font size for responsiveness */
 .propInfo h2 {
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 
-/* Media queries for better responsiveness */
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .propInfo {
-    width: 90%; /* Make card wider on small screens */
-    padding: 15px; /* Adjust padding for smaller screens */
+    width: 90%;
+    padding: 15px;
   }
-
   .propInfo h2, .propInfo h3 {
-    font-size: 1.2em; /* Reduce font size for smaller screens */
+    font-size: 1.2em;
   }
 }
 
-
-
-.card h4 {
-  margin-left: 2%;
-
-}
-
-.eventCard {
-
-  width: 80%;
+.eventCard, .offerCard {
   position: relative;
   background-color: #e3fdfd;
   display: flex;
-  flex-direction: column;
-  flex: 0 0 22.5%;
-  height: 75%;
   padding: 1%;
   margin-top: 1%;
   border-radius: 2%;
-  box-shadow: 14px 8px 14px rgba(0, 0, 1, .5);
   text-align: center;
-  
-  animation: scroll 10s linear infinite;
-  animation-delay: 1s
 }
 
+.card h4 {
+  margin-left: 2%;
+}
+
+.eventCard {
+  width: 80%;
+  flex: 0 0 22.5%;
+  height: 75%; /* Maintain the height of the card */
+  box-shadow: 14px 8px 14px rgba(0, 0, 1, .5);
+  animation: 10s linear 1s infinite scroll;
+}
 
 @keyframes scroll {
   0% {
     transform: translateX(30%);
   }
-
   100% {
     transform: translateX(100%);
-    /* Scroll left */
   }
 }
 
 .offerCard {
   width: 100%;
-
-  position: relative;
-  background-color: #e3fdfd;
-
-  display: flex;
   flex-direction: column;
   flex: 0 0 22%;
-  /* Each card added will be 27% wide */
-
-  height: 70%;
-  padding: 1%;
-  margin-top: 1%;
-  border-radius: 2%;
-
-  box-shadow: 14px 8px 14px rgba(0, 0, 0.5, 0.5);
-  text-align: center;
-  animation: scrollBack 10s linear infinite;
-  /* Animation for scrolling */
-  animation-delay: 1s;
+  height: 70%; /* Maintain the height of the card */
+  box-shadow: 14px 8px 14px rgba(0, 0, .5, .5);
+  animation: 10s linear 1s infinite scrollBack;
 }
 
 @keyframes scrollBack {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-100%);
-    /* Scroll right */
   }
 }
-
-/* Responsivness will be handeled once i figure out the kinks of this library. */
 
 @media(max-width:967px) {
   .card:hover {
     scale: 1.1;
-    transition: ease-in-out 0.2s;
-    opacity: 0.9;
-    background-color: aqua;
+    transition: .2s ease-in-out;
+    opacity: .9;
+    background-color: #0ff;
   }
-
-  offerCard {
+  .offerCard {
     flex: 0 0 30%;
-    /* Three cards per row */
   }
-
 }
 
-
-
-/* ive added code here*/
-@media (max-width: 768px) {
-
-  /* Tablet Breakpoint */
+@media (max-width:768px) {
   .card {
     flex: 0 0 48%;
-    /* Adjust width for tablets */
   }
-
   .offerCard {
     flex: 1;
-    /* One card per row on smaller screens */
-
   }
 }
 
-@media (max-width: 500px) {
-
-  /* Mobile Breakpoint */
+@media (max-width:500px) {
   .card {
     flex: 0 0 100%;
-
-    height: 350px;
-    width: 50%;
-    /* Adjust height automatically */
+    height: 350px; /* Adjusted height for smaller screens */
   }
-  .card:hover{
+  .card:hover {
     scale: 1.01;
   }
-  .offerCard,.eventCard{
-    height: 330px;
-    width: 500px;
+  .eventCard, .offerCard {
+    height: 330px; /* Ensure consistency */
   }
-  .offerCard img,.eventCard img{
-    height: 100%;
-    width: 100%;
+  .eventCard img, .offerCard img {
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
   }
-
 }

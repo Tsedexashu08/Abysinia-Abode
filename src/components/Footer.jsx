@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <div className={FooterStyle.footer}>
-      <div>
+      <footer>
         <h3>About us</h3>
         <Link to='/privacyPage'><p><a href="#">Privacy Policy</a></p></Link>
         <Link to='termsPage'><p><a href="#">Terms and Agreements</a></p></Link>
-      </div>
+      </footer>
       <div>
         <h3>Contact us</h3>
         <p><a href="+251979687879">+251979687879</a></p>
