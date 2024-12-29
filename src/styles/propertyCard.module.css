@@ -12,6 +12,7 @@
   margin-bottom: 1%;
   box-shadow: 14px 8px 14px rgba(0, 0, 0, 0.5);
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .eventCard, .propInfo {
@@ -161,6 +162,9 @@
     background-color: #0ff;
   }
   .offerCard {
+    flex: 0 0 30%;
+  }
+  .offerCard img {
     flex: 0 0 30%;
   }
 }

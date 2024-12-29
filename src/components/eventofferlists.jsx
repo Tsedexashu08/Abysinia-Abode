@@ -54,7 +54,7 @@ export default EventLists
 
 export function OfferLists() {
   const navigate = useNavigate()
-  const [offer, setOffer] = useState({});//sate for storing offers(properties forsale) from our db.
+  const [offer, setOffer] = useState({});//state for storing offers(properties forsale) from our db.
 
   useEffect(() => {
     const fetchOffer = async () => {

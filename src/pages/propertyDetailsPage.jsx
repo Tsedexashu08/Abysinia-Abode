@@ -54,13 +54,14 @@ function App() {
   {/*this function decrements the currentIndex to show previous image*/ }
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    
   };
 console.log(propertyInfo)
   return (
     <>
       <div className={style.container}>
         <main>
-          <h2>{name}</h2>
+          <h2 className={style.header}>{name}</h2>
           <div className={style.imageCarousel}>                                                 {/*this wraps the carousel, containg the navigation buttons and the currrently displayed image*/}
             <button onClick={handlePrev} className={style.carouselButton}>❮</button>
             <img src={`http://localhost/Abysinia-Abode/src/api/${images[currentIndex]}`} alt="Bedroom" className={style.mainImage} />        {/*this image element displays the current image based on currentIndex.*/}
@@ -86,13 +87,13 @@ console.log(propertyInfo)
             <p><strong>Location</strong> : {propertyInfo[0].location}</p>
             <p><strong>Type</strong> : {propertyInfo[0].property_type}</p>
             <p><strong>Description</strong> : {propertyInfo[0].description}</p>
-            <p><strong>Price per-night</strong> : {propertyInfo[0].price}</p>
+            <p><strong>Price per-night</strong> : ${propertyInfo[0].price} birr</p>
             <p><strong>Rooms</strong> : {propertyInfo[0].number_of_rooms} currently available</p>
             <p><strong>Amenities</strong></p>
             <ul className={style.amenities}>
               {
                 Amenities.map((amenty) => (
-
+                
                   <li>{amenty}</li>
 
                 )

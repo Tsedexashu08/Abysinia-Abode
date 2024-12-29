@@ -68,7 +68,7 @@ function RoomsPage() {
           {propertyInfo.length > 0 ? (
             <>
 
-              <h2>{selectedProperty?.name}</h2>
+              <h2 className={style.header}>{selectedProperty?.name}</h2>
               <div className={style.imageCarousel}>
                 <button onClick={handlePrev} className={style.carouselButton}>❮</button>
                 <img src={`http://localhost/Abysinia-Abode/src/api/${images[currentIndex]}`} alt="Bedroom" className={style.mainImage} />

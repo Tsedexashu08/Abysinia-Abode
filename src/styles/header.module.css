@@ -16,6 +16,9 @@
 
 /* container for displaying account pic(profile photo) */
 .header .accountPhoto{
+  width: 40px;
+  height: 40px;
+  margin-top: 0;
   background-color: white;
   width: 55px;
   height: 50px;
@@ -111,22 +114,28 @@
     height: 5%;
     padding-left: 20px;
   }
-  .account{
+  .header .account {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    gap: 10px;
   }
+   
     
   .header .heading{
-    font-size: 1.9vh; /* Adjusts size based on viewport width */
+    font-size: 1.5vh; /* Adjusts size based on viewport height */
     white-space: normal;
     max-height: 3em; /* Adjust based on line height */
     overflow: hidden; /* Hide overflow content */
     text-overflow: ellipsis;
   }
+  
   .header a{
-    font-size: 1.9vh;
-     /* Adjusts size based on viewport width */
-
+    font-size: 1.5vh; /* Adjusts size based on viewport height */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+    
 }

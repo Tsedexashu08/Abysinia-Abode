@@ -23,8 +23,8 @@ function Pay(props) {
                         <input onChange={(e) => { setcheckIn(e.target.value) }} type="date" />
                         <label htmlFor="input">Check out:</label>
                         <input onChange={(e) => { setcheckOut(e.target.value) }} type="date" />
-                        <label htmlFor="input">Email:</label>
-                        <input onChange={(e) => { setEmail(e.target.value) }} type="email" />
+                        {/* <label htmlFor="input">Email:</label>
+                        <input onChange={(e) => { setEmail(e.target.value) }} type="email" /> */}
                     </section>
                     <section>
                         <label htmlFor="input">Amount:</label>
