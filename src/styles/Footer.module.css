@@ -10,11 +10,7 @@
     z-index: 100;
 }
 
-.footer > div {
-    width: 100%; /* Ensure each section takes full width */
-    max-width: 600px; /* Set a max-width for larger screens */
-    margin: 10px 0; /* Add spacing between sections */
-}
+/*  */
 
 .footer h3 {
     margin-bottom: 10px; /* Space below headings */

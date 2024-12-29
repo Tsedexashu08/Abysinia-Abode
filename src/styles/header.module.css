@@ -46,13 +46,15 @@
   font-size: 30px;
   margin-left:10px;
   font-weight: 700;
+  font-family: 'Playfair Display', serif;
   padding: 14px;
 }
 .header a{
   white-space: normal;
-  font-size: 150%;
-  text-decoration: none;
-  padding-top:2% ;
+  font-size: 1.5em;
+  font-family: 'Playfair Display', serif;
+  /* padding-top:2% ; */
+  color: #0ca4a5;
 }
 
 .header svg{

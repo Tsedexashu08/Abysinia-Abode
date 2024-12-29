@@ -76,7 +76,7 @@
 }
 
 /* Responsive styling */
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 768px) {
   .card {
     margin: 10px;
   }
@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px), (max-height: 480px) {
   .cardTitle {
     font-size: 1em;
     padding: 5px;

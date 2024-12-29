@@ -12,7 +12,7 @@ import { useOutletContext } from 'react-router-dom';
 import { useRef } from 'react';
 import img from '../images/settings.png'
 import avatar from '../images/avatar.png'
-import menu from '../images/menu.png'
+import DeleteButton from '../components/delete_button';
 
 
 function Account_Page() {
@@ -193,7 +193,8 @@ function Account_Page() {
                         <tr key={index}>
                           <td>{purchase.property_name}</td>
                           <td>{purchase.purchase_date}</td>
-                          <td>{purchase.property_price}</td>
+                          <td className={style.remove}>{purchase.property_price} <DeleteButton/></td>
+                          
                         </tr>
                       ))
                     ) : (

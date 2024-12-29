@@ -75,7 +75,7 @@ function AddEvent() { // Component for adding events
         })
             .then(response => {
                 console.log(response.data); // Log response data
-                // navigate('/home'); // Navigate to home on successful submission
+                navigate('/home'); // Navigate to home on successful submission
             })
             .catch(error => {
                 console.error('Error:', error); // Log any errors during submission

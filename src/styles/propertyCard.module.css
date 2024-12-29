@@ -153,44 +153,44 @@
     transform: translateX(-100%);
   }
 }
-
-@media(max-width:967px) {
-  .card:hover {
-    scale: 1.1;
-    transition: .2s ease-in-out;
-    opacity: .9;
-    background-color: #0ff;
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(100%);
   }
-  .offerCard {
-    flex: 0 0 30%;
-  }
-  .offerCard img {
-    flex: 0 0 30%;
+  100% {
+    transform: translateY(-50%);
   }
 }
 
-@media (max-width:768px) {
-  .card {
-    flex: 0 0 48%;
+
+
+@media (max-width:800px) {
+  .card,.offerCard,.eventCard {
+    height: 400px; /* Adjusted height for smaller screens */
+    width: 350px;
+  
+    
   }
-  .offerCard {
-    flex: 1;
-  }
+  
 }
 
 @media (max-width:500px) {
   .card {
-    flex: 0 0 100%;
-    height: 350px; /* Adjusted height for smaller screens */
+    /* flex: 1 0 100%; */
+    height: 400px; /* Adjusted height for smaller screens */
+    width: 200px;
+    animation: 10s linear 1s infinite scrollVertical;
   }
   .card:hover {
     scale: 1.01;
   }
   .eventCard, .offerCard {
     height: 330px; /* Ensure consistency */
+    animation: 10s linear 1s infinite scrollVertical
   }
   .eventCard img, .offerCard img {
     height: 100%; /* Full height */
     width: 100%; /* Full width */
   }
+
 }

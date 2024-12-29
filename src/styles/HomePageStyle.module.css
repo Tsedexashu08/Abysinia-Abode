@@ -16,7 +16,11 @@
 
 
 }
-
+.HomePage h1,.offersection h1{
+  text-shadow: #2596be 5px 2px 4px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
 
 @keyframes slideUp {
     from {
@@ -125,6 +129,17 @@
     z-index: 1;
     background-color: white;
     text-align: center;
+    margin-top: 2%;
+    overflow: auto; /* Hide scrollbar but still scrollable */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    .offersection {
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
     
 
 }
@@ -291,6 +306,10 @@
 
 /* ive added code here */
 @media (max-width: 768px) { /* Tablet Breakpoint */
+    .HomePage{
+        gap: 0.2em;
+    
+    }
     .searchbar {
         width: 90%;
         margin-left: 5%;
@@ -319,6 +338,7 @@
     .offersection h1 {
         font-size: 30px;
         height: 50%;
+        margin-top: 1%;
     }
 
     .texts h1 {
@@ -336,98 +356,81 @@
     }
 }/* up to here */
 
-@media (max-width: 500px) {
-    .HomePage{
+@media (max-width: 500px), (max-height: 500px) {
+    .HomePage {
         gap: 0.2em;
         font-size: 50%;
+    }
+    .HomePage h1 ,.searchSection h1{
+        font-size: 2.4em;
+        white-space: none;
     }
     .searchbar {
         width: 90%;
         margin-top: 20%;
-        font-size: 30px;
+        font-size: 2.5em;
     }
-   .Main input{
-    font-size: 25px;
-    text-align: center;  
-    padding: 5px;
-}
-.Main{
-    display: block;
-    align-items: center;
-    justify-items : center;
-    overflow: hidden;
-    gap: 2%;
-
-}
-
-    .searchSection {
-        padding-top: 20%;
+    .searchSection input {
+        font-size: 2.5em;
+        text-align: center;  
+        padding: 5px;
     }
-
-    .searchSection h1 {
-        padding-top: 20%;
-        font-size: 30px;
+    .Main {
+        display: block;
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+        gap: 2%;
     }
     .searchSection {
         padding-top: 20%;
     }
-
     .searchSection h1 {
         padding-top: 20%;
         font-size: 30px;
     }
-
     .eventsection {
         border-top-left-radius: 0;
         height: 100%;
     }
-    .errorPopup{
+    .errorPopup {
         font-size: 14px;
     }
-    .eventsection h1 {
-        font-size: 30px;
-    }
-    .offersection{
-         border: 1px solid black;
+    .offersection {
+        border: 1px solid black;
         margin-top: -1em;
         height: auto;
-     }
+    }
     .offersection h1 {
         font-size: 30px;
     }
-  .texts{
-    align-items: center;
-  }
+    .texts {
+        align-items: center;
+    }
     .texts h1 {
         text-align: left;
         font-size: 40px;
         padding-left: 50px;
     }
-
     .texts button {
         width: 50%;
         margin-left: -1%;
     }
-    /* up to here */
-
     .image {
         display: none;
     }
-    .Main button{
+    .Main button {
         margin: auto;
         height: 59px;
         width: 50px;
         margin-top: 1%;
         margin-left: 0.1%;
-   
         border-bottom-right-radius: 30px;
         border-top-right-radius: 30px;
-        
     }
-    .searches input{
+    .searches input {
         font-size: 23px;
         margin-top: 0.5%;
-        /* border: 1px solid black; */
         height: 53px;
         text-align: left;
         margin-left: 9%;
@@ -440,4 +443,3 @@
         padding: auto;
     }
 }
-    
