@@ -3,7 +3,7 @@ import SearchPanel from '../components/searchSection';
 import PropertyCard from '../components/propertyCard';
 import PropPageStyle from '../styles/PropertyListPage.module.css';
 import avatar from '../images/avatar.png'
-import notfoundimg from '../images/notfound.png'
+import notfoundimg from '../images/srchimg.avif'
 import { useNavigate } from 'react-router-dom';
 
 function PropertyListPage() {
@@ -51,17 +51,17 @@ function PropertyListPage() {
   const handleSort = (option) => {
     setFilterValue(option);
     if (option === 'property_name') {
-      const sortedProperties = [...PropertyInfo].sort((a, b) => 
+      const sortedProperties = [...PropertyInfo].sort((a, b) =>
         a.property_name.toLowerCase().localeCompare(b.property_name.toLowerCase())
       );
       setPropertyInfo(sortedProperties); // Update state with sorted properties
     }
     if (option === 'price') {
-      const sortedProperties = [...PropertyInfo].sort((a, b) => 
-          a.price - b.price
+      const sortedProperties = [...PropertyInfo].sort((a, b) =>
+        a.price - b.price
       );
       setPropertyInfo(sortedProperties); // Update state with sorted properties
-  }
+    }
   };
 
   console.log(PropertyInfo);
@@ -71,27 +71,27 @@ function PropertyListPage() {
       <div className={PropPageStyle.cardList}>
         {searchedValue === '' ? PropertyInfo.length > 0 ? (
           PropertyInfo.map((property) => (
-            <PropertyCard 
+            <PropertyCard
               key={property.property_id} // Add a unique key prop
-              src={`http://localhost/Abysinia-Abode/src/api/${property.image}`} 
-              name={property.property_name} 
-              id={property.property_id} 
+              src={`http://localhost/Abysinia-Abode/src/api/${property.image}`}
+              name={property.property_name}
+              id={property.property_id}
             />
           ))
         ) : (
-        <>
-        <div className={PropPageStyle.addProperty}>
-          <img src={avatar} alt="pointin Avatar" />
-          <button onClick={()=>{navigate('/addProperty')}}>Add Your own Property</button>
-        </div>
-        </>
+          <>
+            <div className={PropPageStyle.addProperty}>
+              <img src={avatar} alt="pointin Avatar" />
+              <button onClick={() => { navigate('/addProperty') }}>Add Your own Property</button>
+            </div>
+          </>
         ) : searchResults.length > 0 ? (
           searchResults.map((property) => (
-            <PropertyCard 
+            <PropertyCard
               key={property.property_id} // Add a unique key prop
-              src={`http://localhost/Abysinia-Abode/src/api/${property.image}`} 
-              name={property.property_name} 
-              id={property.property_id} 
+              src={`http://localhost/Abysinia-Abode/src/api/${property.image}`}
+              name={property.property_name}
+              id={property.property_id}
             />
           ))
         ) : (

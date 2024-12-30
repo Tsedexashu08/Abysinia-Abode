@@ -10,8 +10,7 @@ function Pay(props) {
     const [guests, setGuests] = useState(0);
 
     const randomNumber = Math.floor(10000000 + Math.random() * 90000000);
-    const tx_ref = `${email}-tx-${randomNumber}`;//will ask mak on how this works with email bein empty.
-
+    const tx_ref = `${email}-tx-${randomNumber}`;
     const public_key = 'CHAPUBK_TEST-1PLg4HAlgFw6PQ09vBEgEcuVCTSvoI30';
 
     return (

@@ -155,10 +155,10 @@
 }
 @keyframes scrollVertical {
   0% {
-    transform: translateY(100%);
+    transform: translateY(80%);
   }
-  100% {
-    transform: translateY(-50%);
+  70% {
+    transform: translateY(-10%);
   }
 }
 
@@ -179,14 +179,15 @@
     /* flex: 1 0 100%; */
     height: 400px; /* Adjusted height for smaller screens */
     width: 200px;
-    animation: 10s linear 1s infinite scrollVertical;
+    /* animation: 10s linear 1s infinite scrollVertical; */
   }
   .card:hover {
     scale: 1.01;
   }
   .eventCard, .offerCard {
     height: 330px; /* Ensure consistency */
-    animation: 10s linear 1s infinite scrollVertical
+    animation: 10s linear 1s infinite scrollVertical;
+    margin-top:2%;
   }
   .eventCard img, .offerCard img {
     height: 100%; /* Full height */

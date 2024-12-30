@@ -1,6 +1,7 @@
 .container {
   /* is the property details component container. */
   width: 900px;
+  font-family: 'Playfair Display', serif;
 
   padding: 20px;
   overflow: auto;
@@ -225,6 +226,8 @@
 }
 
 .propertyCard {
+  font-family: 'Playfair Display', serif;
+  color: #000000d6;
   width: 200px;
   cursor: pointer;
   border: 1px solid #ccc;
@@ -326,11 +329,7 @@
   opacity: 0.8;
 }
 
-.thumbnailContainer:active> :not(:active) {
-  border: 2px solid blue;
-  scale: 1.01;
-  transition: 0.2s ease;
-}
+
 
 .container:hover {
   scale: 1.001;
